@@ -2,12 +2,12 @@
 
 session_start();
 
-function values()
+function values(): void
 {
     $_SESSION['numbers'][] = $_POST['values'];
 
     echo "All Values: ";
-    
+
     foreach ($_SESSION['numbers'] as $values) {
         echo $values . " ";
     }
@@ -15,7 +15,7 @@ function values()
     echo "<br>" . "Min Value: " . min($_SESSION['numbers']) . "<br>" . "Max Value: " . max($_SESSION['numbers']);
 }
 
-function destroy()
+function destroy(): void
 {
     session_destroy();
 }
